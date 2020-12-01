@@ -191,16 +191,16 @@ module.exports = {
     "import/first": "error",
     "import/group-exports": "off", // Doesn't work for my style
     "import/max-dependencies": "off", // not worth it
-    "import/named": "error",
-    "import/namespace": "error",
+    "import/named": "off", // extremely slow
+    "import/namespace": "off", // extremely slow
     "import/newline-after-import": "error",
     "import/no-absolute-path": "error",
     "import/no-amd": "error",
     "import/no-anonymous-default-export": ["error", {allowObject: true}],
     "import/no-commonjs": "warn",
-    "import/no-cycle": "error",
+    "import/no-cycle": "off", // extremely slow
     "import/no-default-export": "error",
-    "import/no-deprecated": "error",
+    "import/no-deprecated": "off", // extremely slow
     "import/no-duplicates": "off", // Just frankly a bad rule
     "import/no-dynamic-require": "error",
     "import/no-extraneous-dependencies": "error",
@@ -395,7 +395,7 @@ module.exports = {
     "no-sequences": "error",
     "no-setter-return": "error",
     "no-shadow-restricted-names": "error",
-    "no-shadow": "error",
+    "no-shadow": "off", // handled by typescript/eslint-plugin
     "no-sparse-arrays": "error",
     "no-sync": "error",
     "no-tabs": "error",
@@ -417,7 +417,7 @@ module.exports = {
     "no-unsafe-negation": "error",
     "no-unused-expressions": "error",
     "no-unused-labels": "error",
-    "no-unused-vars": "error",
+    "no-unused-vars": "off", // handled by typescript/eslint-plugin
     "no-use-before-define": "off", // handled by typescript/eslint-plugin
     "no-useless-backreference": "error",
     "no-useless-call": "error",
@@ -533,7 +533,7 @@ module.exports = {
     "unicorn/no-null": "off", // what the fuck
     "unicorn/no-object-as-default-parameter": "error",
     "unicorn/no-process-exit": "error",
-    "unicorn/no-reduce": "error",
+    "unicorn/no-reduce": "off", // this is fucking stupid
     "unicorn/no-unreadable-array-destructuring": "error",
     "unicorn/no-unsafe-regex": "error",
     "unicorn/no-unused-properties": "error",

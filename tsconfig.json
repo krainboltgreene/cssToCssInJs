@@ -3,6 +3,8 @@
       "node_modules"
     ],
     "compilerOptions": {
+      "target": "es2019",
+      "moduleResolution": "node",
       "esModuleInterop": true,
       "noEmit": true,
       "strict": true
