@@ -1,0 +1,75 @@
+{
+  "name": "css-to-css-in-js",
+  "version": "1.0.0",
+  "description": "A tool to generate trendy CSS-in-JS files from regular CSS",
+  "keywords": [
+    "css",
+    "css-in-js",
+    "emotion"
+  ],
+  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://github.com/krainboltgrenee/css-to-css-in-js#readme",
+  "repository": "github:krainboltgrenee/css-to-css-in-js",
+  "bugs": "https://github.com/krainboltgrenee/css-to-css-in-js/issues",
+  "contributors": [
+    {
+      "name": "Kurtis Rainbolt-Greene",
+      "email": "kurtis@rainbolt-greene.online",
+      "url": "https://kurtis.rainbolt-greene.online"
+    }
+  ],
+  "main": "main.js",
+  "module": "module.js",
+  "browser": "browser.js",
+  "types": "index.ts",
+  "files": [
+    "index.ts",
+    "main.js",
+    "module.js",
+    "browser.js"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "test": "BABEL_ENV=test jest --coverage",
+    "build": "npm run build:browser && npm run build:main && npm run build:module",
+    "build:main": "babel --env-name main --out-file './main.js' './index.ts'",
+    "build:browser": "babel --env-name browser --out-file './browser.js' './index.ts'",
+    "build:module": "babel --env-name module --out-file './module.js' './index.ts'",
+    "lint": "eslint './index.ts'",
+    "typecheck": "tsc --noEmit",
+    "ci": "npm run typecheck && npm run lint && npm run test"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.8",
+    "@babel/core": "^7.12.9",
+    "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-typescript": "^7.12.7",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^14.14.10",
+    "@types/postcss-safe-parser": "^4.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.8.2",
+    "@typescript-eslint/parser": "^4.8.2",
+    "babel-jest": "^26.6.3",
+    "babel-plugin-annotate-console-log": "^1.0.0",
+    "babel-preset-minify": "^0.5.1",
+    "core-js": "^3.8.0",
+    "eslint": "^7.14.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-filenames": "^1.3.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-unicorn": "^23.0.0",
+    "jest": "^26.6.3",
+    "jest-extended": "^0.11.5",
+    "typescript": "^4.1.2"
+  },
+  "dependencies": {
+    "postcss": "^8.1.10",
+    "postcss-safe-parser": "^5.0.2",
+    "prettier": "^2.2.1"
+  }
+}

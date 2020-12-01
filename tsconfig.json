@@ -1,0 +1,10 @@
+{
+    "exclude": [
+      "node_modules"
+    ],
+    "compilerOptions": {
+      "esModuleInterop": true,
+      "noEmit": true,
+      "strict": true
+    }
+  }

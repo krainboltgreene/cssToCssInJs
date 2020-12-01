@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+const {readFileSync, writeFileSync} = require("fs");
+const {format} = require("prettier");
+const {convertCssForEmotion} = require("../lib/convertCssForEmotion");
+
+const inPath = process.argv[2];
+const outPath = process.argv[3];
+console.info(`Reading ${inPath} and writing ${outPath}...`)
+const inputFile = readFileSync(inPath).toString()
+console.info("Converting css input to js...")
+const cssInJs = convertCssForEmotion(inputFile);
+console.info("Formatting output javascript...")
+const formattedCssInJs = format(cssInJs, {
+  parser: "typescript",
+  tabWidth: 4,
+});
+console.info("Writing to output...")
+writeFileSync(outPath, formattedCssInJs)
